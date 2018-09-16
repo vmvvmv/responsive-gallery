@@ -4,10 +4,10 @@ import Draggable from '../draggable/draggable';
 import DragBox from '../draggable/dragBox';
 import './massonry.css';
 
-const Tile = ({src}) => {
+const Tile = ({src, id}) => {
     return (
       <div className="tile">
-            <Draggable targetKey="DragBox" label="orange" image={src}/>
+            <Draggable targetKey="DragBox" label={id} image={src}/>
       </div>
     );
   };
@@ -22,9 +22,9 @@ class MassonryLayout extends Component{
 				<div className="masonry-container">
 					<p>ReactJS Responsive/Modular MasonryItem Grid.</p>
 					<MasonryItem brakePoints={this.props.brakePoints}>
-						{this.props.images.map((image, id) => {
+						{this.props.images.map((image) => {
 							return (
-								<Tile key={image} src={image} />
+								<Tile key={image.id} src={image.url} id={image.id}/>
 							) 
 						})}
 					</MasonryItem>

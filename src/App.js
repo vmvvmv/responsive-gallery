@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import FileManagerContainer from './components/fileUpload/fileUplaod';
+import FileManagerContainer from './components/fileUpload/fileManager';
 
 
 class App extends Component {

@@ -3,17 +3,7 @@ import {firebaseApp} from '../../firebase/firebase';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton'
 import MassonryLayout from '../massonry layout/massonry';
 
-let brakePoints = [350, 500, 750];
-let images = [];
-const imgId = [1011, 883, 1074, 823, 64, 65, 839, 314, 256, 316, 92,643, 777, 999, 1, 402];
-for(let i = 0; i< imgId.length; i++){
-	const ih = 200 + Math.floor(Math.random()*10)*15;
-	images.push("https://unsplash.it/250/" + ih + "?image=" + imgId[i]);
-}
-
-console.log(images);
-
-console.log(firebaseApp.storage())
+const brakePoints = [350, 500, 750];
 
 class FileManagerContainer extends Component {
   state = {
@@ -21,6 +11,7 @@ class FileManagerContainer extends Component {
     isUploading: false,
     progress: 0,
     images:[]
+   
   };
 
   componentDidMount() {
@@ -29,9 +20,11 @@ class FileManagerContainer extends Component {
       let items = snapshot.val();
       let newState = [];
       for (let item in items) {
-        newState.push(items[item].url);
+        newState.push({
+          id: item,
+          url: items[item].url,
+        });
       }
-      console.log(newState);
       this.setState({
         images: newState
       });
@@ -53,13 +46,13 @@ class FileManagerContainer extends Component {
       .child(filename)
       .getDownloadURL()
       .then(url => {
-          console.log(url);
           const itemsRef = firebaseApp.database().ref('images');
           const image = {url}
           itemsRef.push(image);
           this.setState({avatarURL: url})});
   };
   render() {
+    // const images = this.state.images.map( image => image.url);
     return (
       <div>
         <form>
