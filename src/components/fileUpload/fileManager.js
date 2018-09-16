@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import {firebaseApp} from '../../firebase/firebase';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton'
+import 'react-sticky-header/styles.css';
 import MassonryLayout from '../massonry layout/massonry';
+import DragBox from '../draggable/dragBox';
+
+
 
 const brakePoints = [350, 500, 750];
 
@@ -55,26 +59,34 @@ class FileManagerContainer extends Component {
     // const images = this.state.images.map( image => image.url);
     return (
       <div>
-        <form>
-          <CustomUploadButton
-            accept="image/*"
-            storageRef={firebaseApp
-            .storage()
-            .ref('images')}
-            onUploadStart={this.handleUploadStart}
-            onUploadError={this.handleUploadError}
-            onUploadSuccess={this.handleUploadSuccess}
-            onProgress={this.handleProgress}
-            style={{
-            backgroundColor: 'steelblue',
-            color: 'white',
-            padding: 10,
-            borderRadius: 4
-          }}>
-            Upload image
-          </CustomUploadButton>
-        </form>
+        <header>
+        <div>
+        <CustomUploadButton
+           accept="image/*"
+           storageRef={
+            firebaseApp
+           .storage()
+           .ref('images')}
+           onUploadStart={this.handleUploadStart}
+           onUploadError={this.handleUploadError}
+           onUploadSuccess={this.handleUploadSuccess}
+           onProgress={this.handleProgress}
+           style={{
+           backgroundColor: 'red',
+           color: 'white',
+           padding: 10,
+           borderRadius: 4,
+           }}>
+           Upload image
+        </CustomUploadButton>
+        </div>
+        <div>
+          <DragBox targetKey="DragBox"/>
+        </div>
+
+        </header>
         <MassonryLayout images = {this.state.images} brakePoints={brakePoints} /> 
+
       </div>
     );
   }

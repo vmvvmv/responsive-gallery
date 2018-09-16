@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import Draggable from '../draggable/draggable';
-import DragBox from '../draggable/dragBox';
 import './massonry.css';
 
 const Tile = ({src, id}) => {
@@ -16,11 +15,8 @@ class MassonryLayout extends Component{
 	render(){
 		return (
 			<div className="container">
-                <div className="boxes">
-                    <DragBox targetKey="DragBox"/>
-                </div>
+
 				<div className="masonry-container">
-					<p>ReactJS Responsive/Modular MasonryItem Grid.</p>
 					<MasonryItem brakePoints={this.props.brakePoints}>
 						{this.props.images.map((image) => {
 							return (

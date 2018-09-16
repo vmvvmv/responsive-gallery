@@ -1,7 +1,7 @@
 .masonry-container {
     width: 80%;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 100px;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
   .masonry-container p {
@@ -37,17 +37,3 @@
     border-radius: 10px;
     width: 100%;
   }
-
-  .box {
-	width: 75px;
-	height: 100px;
-	margin: 10px 10px 10px 10px;
-	right: 0;
-  position: fixed;
-
-  background: url(/dragToRemove.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 10;
-}

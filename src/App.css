@@ -2,27 +2,32 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+
+header{
+  height: 85px;
+  vertical-align: center;
+  box-shadow: 0 4px 2px -2px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index:10;
+  width:100%;
+  background: white;
+  top:0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+.box {
+	width: 55px;
+	height: 80px;
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  background: url(/dragToRemove.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top:0;
 }
