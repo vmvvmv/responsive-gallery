@@ -12,7 +12,7 @@ export default class Draggable extends Component {
             customDragElement={this.props.customDragElement}
             onDrop={(e)=>(console.log(e))}
           >
-            <img src={this.props.image}  />
+            <img src={this.props.image} alt="item" />
           </DragDropContainer>
         </div>
       );

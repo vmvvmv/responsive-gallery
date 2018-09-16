@@ -24,7 +24,7 @@ class MassonryLayout extends Component{
 					<MasonryItem brakePoints={this.props.brakePoints}>
 						{this.props.images.map((image, id) => {
 							return (
-								<Tile src={image} />
+								<Tile key={image} src={image} />
 							) 
 						})}
 					</MasonryItem>

@@ -26,10 +26,11 @@ export default class DragBox extends Component {
                 onHit={this.handleDrop}
                 targetKey={this.props.targetKey}
                 dropData={{name: this.props.name}}
-              >
+              > 
+              <div>
                 <div className="box">
-                 
                 </div>
+              </div>
               </DropTarget>
         </div>
       );
