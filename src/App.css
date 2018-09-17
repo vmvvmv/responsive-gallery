@@ -2,32 +2,3 @@
   text-align: center;
 }
 
-
-
-header{
-  height: 85px;
-  vertical-align: center;
-  box-shadow: 0 4px 2px -2px gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index:10;
-  width:100%;
-  background: white;
-  top:0;
-}
-
-.trashBox {
-	width: 55px;
-	height: 80px;
-
-  background: url(/dragToRemove.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 10;
-  position: absolute;
-  right: 0;
-  top:0;
-}
