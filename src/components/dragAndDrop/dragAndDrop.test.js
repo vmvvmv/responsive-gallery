@@ -7,7 +7,7 @@ import DragBox from './draggable';
 it('renders Draggable without crashing', () => {
     const div = document.createElement('div');
     const wrap = (
-      <Draggable targetKey="DragBox" label={'test'} onDrop={(e)=>(console.log(e))}>
+      <Draggable targetKey="DragBox" label='test' onDrop={(e)=>(console.log(e))}>
           <img  alt="item" />
       </Draggable>
     )
