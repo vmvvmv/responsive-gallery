@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MassonryLayout, {MasonryItems} from './massonry';
+import MassonryLayout from './';
 
 
 it('renders MassonryLayout without crashing', () => {
@@ -9,9 +9,9 @@ it('renders MassonryLayout without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
 });
 
-it('renders MasonryItems without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<MasonryItems brakePoints = {[350, 500, 750]}>{[]}</MasonryItems>, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
+// it('renders MasonryItems without crashing', () => {
+//     const div = document.createElement('div');
+//     ReactDOM.render(<MasonryItems brakePoints = {[350, 500, 750]}>{[]}</MasonryItems>, div);
+//     ReactDOM.unmountComponentAtNode(div);
+// });
   
