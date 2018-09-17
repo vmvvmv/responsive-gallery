@@ -1,7 +1,6 @@
 import React from 'react';
-import Draggable from '../draggable/draggable';
-import {removeImageFromStorage} from '../../firebase/firebase';
-
+import Draggable from '../dragAndDrop/draggable';
+import {removeImageFromStorage} from '../../firebase';
 
 const MassonryTile = ({src, id}) => {
     return (

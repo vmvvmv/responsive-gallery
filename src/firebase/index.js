@@ -14,5 +14,18 @@ const removeImageFromStorage = (itemId) => {
   itemRef.remove();
 }
 
-export  {firebaseApp, removeImageFromStorage};
+const addImageToStorage = (filename) => {
+  firebaseApp
+    .storage()
+    .ref('images')
+    .child(filename)
+    .getDownloadURL()
+    .then(url => {
+        const itemsRef = firebaseApp.database().ref('images');
+        const image = {url}
+        itemsRef.push(image);
+    })
+};
+
+export  {firebaseApp, removeImageFromStorage, addImageToStorage};
 
