@@ -17,13 +17,13 @@ class MassonryLayout extends Component{
 			<div className="container">
 
 				<div className="masonry-container">
-					<MasonryItem brakePoints={this.props.brakePoints}>
+					<MasonryItems brakePoints={this.props.brakePoints}>
 						{this.props.images.map((image) => {
 							return (
 								<Tile key={image.id} src={image.url} id={image.id}/>
 							) 
 						})}
-					</MasonryItem>
+					</MasonryItems>
 				</div>
 			</div>
 		)
@@ -31,7 +31,7 @@ class MassonryLayout extends Component{
 }
 
 
-class MasonryItem extends React.Component{
+class MasonryItems extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {columns: 1};
@@ -49,7 +49,7 @@ class MasonryItem extends React.Component{
 	}
 	
 	onResize(){
-		const columns = this.getColumns(this.refs.MasonryItem.offsetWidth);
+		const columns = this.getColumns(this.refs.MasonryItems.offsetWidth);
 		if(columns !== this.state.columns){
 			this.setState({columns: columns});	
 		}
@@ -70,7 +70,7 @@ class MasonryItem extends React.Component{
 	
 	render(){
 		return (
-			<div className="masonry" ref="MasonryItem">
+			<div className="masonry" ref="MasonryItems">
 				{this.mapChildren().map((col, ci) => {
 					return (
 						<div className="column" key={ci} >
@@ -85,5 +85,5 @@ class MasonryItem extends React.Component{
 	}
 }
 
-
+export {MasonryItems, Tile};
 export default MassonryLayout;

@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "firebase": "^5.5.0",
+    "jest": "^23.6.0",
     "react": "^16.5.1",
+    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.5.1",
     "react-drag-drop-container": "^6.1.1",
     "react-firebase-file-uploader": "^2.4.2",

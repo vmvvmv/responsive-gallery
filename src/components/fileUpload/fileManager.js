@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {firebaseApp} from '../../firebase/firebase';
 import CustomUploadButton from 'react-firebase-file-uploader/lib/CustomUploadButton'
-import 'react-sticky-header/styles.css';
 import MassonryLayout from '../massonry layout/massonry';
 import DragBox from '../draggable/dragBox';
 
