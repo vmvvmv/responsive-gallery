@@ -9,12 +9,11 @@ import DragBox from '../draggable/dragBox';
 const brakePoints = [350, 500, 750];
 
 class FileManagerContainer extends Component {
+  
   state = {
-
     isUploading: false,
     progress: 0,
     images:[]
-   
   };
 
   componentDidMount() {
@@ -34,7 +33,6 @@ class FileManagerContainer extends Component {
     });
   }
 
-  handleChangeUsername = (event) => this.setState({username: event.target.value});
   handleUploadStart = () => this.setState({isUploading: true, progress: 0});
   handleProgress = (progress) => this.setState({progress});
   handleUploadError = (error) => {
