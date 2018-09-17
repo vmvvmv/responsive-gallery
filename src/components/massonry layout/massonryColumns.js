@@ -1,37 +1,9 @@
-
 import React, { Component } from 'react';
-import Draggable from '../draggable/draggable';
-import './massonry.css';
 
-const Tile = ({src, id}) => {
-    return (
-      <div className="tile">
-            <Draggable targetKey="DragBox" label={id} image={src}/>
-      </div>
-    );
-  };
+const brakePoints = [350, 500, 750];
 
-class MassonryLayout extends Component{
-	render(){
-		return (
-			<div className="container">
+class MasonryColumns extends Component{
 
-				<div className="masonry-container">
-					<MasonryItems brakePoints={this.props.brakePoints}>
-						{this.props.images.map((image) => {
-							return (
-								<Tile key={image.id} src={image.url} id={image.id}/>
-							) 
-						})}
-					</MasonryItems>
-				</div>
-			</div>
-		)
-	}
-}
-
-
-class MasonryItems extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {columns: 1};
@@ -43,9 +15,9 @@ class MasonryItems extends React.Component{
 	}
 	
 	getColumns(w){
-		return this.props.brakePoints.reduceRight( (p, c, i) => {
+		return brakePoints.reduceRight( (p, c, i) => {
 			return c < w ? p : i;
-		}, this.props.brakePoints.length) + 1;
+		}, brakePoints.length) + 1;
 	}
 	
 	onResize(){
@@ -53,7 +25,6 @@ class MasonryItems extends React.Component{
 		if(columns !== this.state.columns){
 			this.setState({columns: columns});	
 		}
-		
 	}
 	
 	mapChildren(){
@@ -83,7 +54,7 @@ class MasonryItems extends React.Component{
 			</div>
 		)
 	}
+
 }
 
-export {MasonryItems, Tile};
-export default MassonryLayout;
+export default MasonryColumns;

@@ -9,5 +9,10 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: '950495323455'
 });
 
-export  {firebaseApp};
+const removeImageFromStorage = (itemId) => {
+  const itemRef = firebaseApp.database().ref(`/images/${itemId}`);
+  itemRef.remove();
+}
+
+export  {firebaseApp, removeImageFromStorage};
 
